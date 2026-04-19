@@ -1,5 +1,11 @@
 # 3b1b pi
 
+
+waitwait currently doesn't wokr somethings wront with ny ath
+idk im trid i cant  fund it
+
+---
+
 currently 1am im just grinding phys and i want to calculate the 31 collisions in a n=1 simulation of the pi thingy
 
 just to make sure i dont make 1 arithmetic error and mess up the entire rest of the calculations im gonna write this so i can check my working
@@ -18,4 +24,4 @@ python3 main.py
 
 i wrote this without google or internet so dont"dude you implemented this library but terrible"
 
-also the code is totally unreadable i didnt care at all about that part
+also the code is totally unreadable i didnt care at all about that
