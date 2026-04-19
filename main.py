@@ -21,15 +21,18 @@ v1=0.0
 v2=1.0
 
 for i in range(1):
+    print("-"*20)
+    print("Initial")
+    print(f"Time: {t:.2f}")
+    print(f"Distances: {dist_boxes:.2f} | {dist_box_wall:.2f}")
+    print(f"Velocities: {v1:.2f} | {v2:.2f}")
     if box_x_box:
         rel_v = v2-v1
         delta_t = dist_boxes/rel_v
         t += delta_t
         dist_boxes=0
         dist_box_wall-=(delta_t*v1)
-        print(f"Time: {t:.2f}")
-        print(f"Distances: {dist_boxes:.2f} | {dist_box_wall:.2f}")
-        print(f"Velocities: {v1:.2f} | {v2:.2f}")
+
 
         # v1-v2=u2-u1
         # rel_v=u2-u1
@@ -59,5 +62,28 @@ for i in range(1):
             print(v1, v2)
             raise ValueError()
         v1 = v2+rel_v
+
+        print("-"*20)
+        print("Final")
+        print(f"Time: {t:.2f}")
+        print(f"Distances: {dist_boxes:.2f} | {dist_box_wall:.2f}")
+        print(f"Velocities: {v1:.2f} | {v2:.2f}")
     else:
+        assert v1>=v2 # If this is false, physics has failed you
+        delta_t = dist_box_wall/v1
+        t+=delta_t
+        dist_box_wall=0
+        rel_v=v2-v1
+        dist_boxes+=(rel_v*delta_t)
+        v2*=-1
+
+
         
+
+        print("-"*20)
+        print("Final")
+        print(f"Time: {t:.2f}")
+        print(f"Distances: {dist_boxes:.2f} | {dist_box_wall:.2f}")
+        print(f"Velocities: {v1:.2f} | {v2:.2f}")
+        
+    box_x_box=not box_x_box
