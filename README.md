@@ -17,3 +17,5 @@ python3 main.py
 ```
 
 i wrote this without google or internet so dont"dude you implemented this library but terrible"
+
+also the code is totally unreadable i didnt care at all about that part
