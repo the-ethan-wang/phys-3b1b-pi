@@ -1,8 +1,7 @@
 import math
 from typing import Union
-from fractions import Fraction
 
-def zeroes(quadratic: tuple[int, int, Fraction]) -> Union[tuple[Fraction, Fraction], Fraction, None]:
+def zeroes(quadratic: tuple[float, float, float]) -> Union[tuple[float, float], float, None]:
     """Find the zeroes of a quadratic lol. input a b and c as fractions."""
 
     a,b,c=quadratic
@@ -11,6 +10,7 @@ def zeroes(quadratic: tuple[int, int, Fraction]) -> Union[tuple[Fraction, Fracti
     if discriminant<0:
         return
     elif discriminant==0:
-        return Fraction(-b, 2*a)
+        return -b/(2*a)
     else:
-        return (Fraction(-b+math.sqrt(discriminant), ))
+        return ((-b+discriminant)/(2*a), (-b-discriminant)/(2*a))
+
