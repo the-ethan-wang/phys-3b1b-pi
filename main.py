@@ -1,7 +1,7 @@
 import math
 
 def zeroes(a,b,c) -> tuple[int, int]:
-    """Assumes discriminant is a perfect square. Doesn't care if it's a double root lol."""
+    """Assumes discriminant is non-negative. Doesn't care if it's a double root lol."""
     discr = b**2-(4*a*c)
     denominator=(2*a)
     return (
