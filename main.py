@@ -25,7 +25,7 @@ if __name__ == "__main__":
     for i in range(6):
         assert dist_boxes>=0
         assert dist_box_wall>=0
-        
+
         print("-"*20)
         print(f"Post Collision {i+1}")
         print(f"Time: {t:.2f}")
@@ -50,7 +50,7 @@ if __name__ == "__main__":
             # a=11/2, b=rel_v, c=rel_v^2-5
             alpha, beta = zeroes(11/2, rel_v, rel_v**2/2-5)
 
-            # for a root to be the correct root, the value f or v_2 must support(i forgot the verb im really tired)
+            # for a root to be the correct root, the value f or v_2 must satisfy
             # m1*u1+m2*u2=m1*v1+m2*v2
             # since v1=v2+rel_v
             # m1*u1+m2*u2=v2*(m2+m1)+rel_v*m1
