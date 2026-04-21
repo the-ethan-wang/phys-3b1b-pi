@@ -1,4 +1,4 @@
-from main import zeroes
+from attempt_1 import zeroes
 
 a = 11
 b = 2

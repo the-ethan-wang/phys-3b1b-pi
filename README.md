@@ -19,9 +19,22 @@ im too tired to draw a diagram with ascii art go imagine 2 blocks and a wall and
 and the big block has a starting speed of 1m/s or anything it doesn't matter and see how many collisions occur.
 
 ```bash
-python3 main.py
+python3 attempt_1.py
+python3 attempt_2.py
 ```
 
 i wrote this without google or internet so dont"dude you implemented this library but terrible"
 
 also the code is totally unreadable i didnt care at all about that
+
+---
+
+ok I wrote some more code in a exercise book at 1am then transcribed it, uhm it's cleaner but still not finding pi  
+
+---
+
+ok i fixed it, `attempt_2.py` works  
+input an positive integer, if you don't then it defaults to 100  
+then it will print the collisions  
+if you enter a number larger than 1000 then it will print half the number of information but the information is redundant / simple to find out  
+if you enter a number larger than 10000 then it will print the first 20 and the last 20 collisions only

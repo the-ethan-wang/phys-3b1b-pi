@@ -22,17 +22,18 @@ if __name__ == "__main__":
     v1=0.0
     v2=1.0
 
-    for i in range(6):
-        assert dist_boxes>=0
-        assert dist_box_wall>=0
+    for i in range(7):
 
         print("-"*20)
         print(f"Post Collision {i+1}")
-        print(f"Time: {t:.2f}")
+        print(f"Time: {t:.3f}")
         print(f"Distances: {dist_boxes:.2f} | {dist_box_wall:.2f}")
         print(f"Velocities: {v1:.2f} | {v2:.2f}")
         print(f"Current collision is box and box?: {not box_x_box}")
+        assert dist_boxes>=0
+        assert dist_box_wall>=0
         if box_x_box:
+            assert v1<=0
             rel_v = v2-v1
             delta_t = dist_boxes/rel_v
             t += delta_t
@@ -54,12 +55,14 @@ if __name__ == "__main__":
             # m1*u1+m2*u2=m1*v1+m2*v2
             # since v1=v2+rel_v
             # m1*u1+m2*u2=v2*(m2+m1)+rel_v*m1
-            if m1*v1+m2*v2 == alpha*(m2+m1)+rel_v*m1:
+            if abs(m1*v1+m2*v2 - alpha*(m2+m1)-rel_v*m1) <= 10**-5:
                 v2=alpha
-            elif m1*v1+m2*v2 == beta*(m2+m1)+rel_v*m1:
+            elif abs(m1*v1+m2*v2 - beta*(m2+m1)-rel_v*m1) <= 10**-5:
                 v2=beta
             else:
                 print("you should probably meditate")
+                print(abs(m1*v1+m2*v2 - alpha*(m2+m1)-rel_v*m1) )
+                print(abs(m1*v1+m2*v2 - beta*(m2+m1)-rel_v*m1) )
                 print(beta*(m2+m1)+rel_v*m1)
                 print(alpha*(m2+m1)+rel_v*m1)
                 print(m1*v1+m2*v2)
@@ -68,7 +71,7 @@ if __name__ == "__main__":
                 print(v1, v2)
                 print(11/2, rel_v, rel_v**2-10)
                 raise ValueError()
-            #print(11/2, rel_v, rel_v**2-10)
+            print(11/2, rel_v, rel_v**2-10)
             v1 = v2+rel_v
         else:
             assert v1>=v2 # If this is false, physics has failed you
@@ -76,8 +79,8 @@ if __name__ == "__main__":
             t+=delta_t
             dist_box_wall=0
             rel_v=v2-v1
-            dist_boxes+=(rel_v*delta_t)
-            v2*=-1
+            dist_boxes+=abs(rel_v*delta_t)
+            v1*=-1
 
         box_x_box=not box_x_box
 
