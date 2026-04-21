@@ -9,9 +9,10 @@ Completely inspired by 3b1b's video on [why colliding blocks compute pi](https:/
 From [a text adaptation by Josh Pullen](https://www.3blue1brown.com/lessons/colliding-blocks-v2/)
 
 > The setup involves two sliding blocks, a big one coming in from the right, a smaller one that starts of stationary to its left, and a wall to the left of both of them that the small one can bounce off of. The two blocks bounce back and forth until the big block's momentum is fully redirected, and it outpaces the small one away from the wall.  
+> 
 > If that first block has a mass which is some power of 100 times the mass of the second, for example 1,000,000 times as much, a ridiculously surprising fact pops out: The total number of collisions has the same starting digits as pi! In this example, that's 3,141 collisions.  
 
-<video controls src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2025/colliding-blocks-v2/frictionless-elastic-collisions.mp4" title="stolen video"></video>
+[![video of blocks]()](https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2025/colliding-blocks-v2/frictionless-elastic-collisions.mp4)
 
 I watched the video a long time ago and recently wanted to try and do it lol :>
 
