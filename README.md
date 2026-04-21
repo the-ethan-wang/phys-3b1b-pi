@@ -39,6 +39,7 @@ initial momentum = m1 * v1 + m2 * (v1 + relative velocity)
 initial momentum = v1 * (m1 + m2) + m2 * relative velocity  
 v1 = (initial momentum - m2 * relative velocity) / initial momentum  
 v2 = v1 + relative velocity  
+
 ```py
 rel_v=u1-u2
 init_m=m1*u1+m2*u2
