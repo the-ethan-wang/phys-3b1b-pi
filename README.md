@@ -1,6 +1,6 @@
 # 3b1b pi
 
-i wrote this without google or internet at 1am across 2 nights.
+i wrote this without google or internet or help at 1am across 2 nights.
 
 # sample outputs in `outputs.txt`
 # sample outputs in `outputs.txt`
