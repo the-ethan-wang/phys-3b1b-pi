@@ -8,6 +8,8 @@ i wrote this without google or internet or help at 1am across 2 nights.
 # sample outputs in `outputs.txt`
 # sample outputs in `outputs.txt`
 
+you can click on the file or go [here](https://raw.githubusercontent.com/the-ethan-wang/phys-3b1b-pi/refs/heads/main/outputs.txt) for raw
+
 ## inspiration
 
 Completely inspired by 3b1b's video on [why colliding blocks compute pi](https://www.youtube.com/watch?v=6dTyOl1fmDo). And physics textbook lol.
