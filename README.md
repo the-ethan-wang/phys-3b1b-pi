@@ -1,41 +1,37 @@
 # 3b1b pi
 
+i wrote this without google or internet at 1am across 2 nights.
 
-waitwait currently doesn't wokr somethings wront with ny ath
-idk im trid i cant  fund it
+## inspiration
 
----
+Completely inspired by 3b1b's video on [why colliding blocks compute pi](https://www.youtube.com/watch?v=6dTyOl1fmDo). And physics textbook lol.
 
-currently 1am im just grinding phys and i want to calculate the 31 collisions in a n=1 simulation of the pi thingy
+From [a text adaptation by Josh Pullen](https://www.3blue1brown.com/lessons/colliding-blocks-v2/)
 
-just to make sure i dont make 1 arithmetic error and mess up the entire rest of the calculations im gonna write this so i can check my working
+> The setup involves two sliding blocks, a big one coming in from the right, a smaller one that starts of stationary to its left, and a wall to the left of both of them that the small one can bounce off of. The two blocks bounce back and forth until the big block's momentum is fully redirected, and it outpaces the small one away from the wall.
 
-the original thing was something like this(don't slime me out)
+> If that first block has a mass which is some power of 100 times the mass of the second, for example 1,000,000 times as much, a ridiculously surprising fact pops out: The total number of collisions has the same starting digits as pi! In this example, that's 3,141 collisions.
 
-Assuming inelastic collisions with no friction/air resistance/whatever for m_2 = 10^n, number of collisions approaches pi * 10^n as n approaches infinity
+I watched the video a long time ago and recently wanted to try and do it lol :>
 
-im too tired to draw a diagram with ascii art go imagine 2 blocks and a wall and one block 10kg other block 1kg and small block is 1m from the wall or any distance it doesn't matter
+## contents
 
-and the big block has a starting speed of 1m/s or anything it doesn't matter and see how many collisions occur.
+`old.py` contains really bad code where I tried to calculate the outcome of elastic collisions using a quadratic. (idk what i was doing lol)
 
+`main.py` has "finished" code you run it and enter a positive integer and it will calculate pi*m1 through physics
+
+## usage
+
+you need python 3 for this
 ```bash
-python3 attempt_1.py
-python3 attempt_2.py
+python3 main.py
 ```
+or
+```bash
+python main.py
+```
+then enter a positive integer for m2 (ion wanna do float inputs...)  
+if you dont want to choose just press enter and it'll default to 100  
+if you enter a number larger than 100 then it will print the first 20 and the last 20 collisions only  
 
-i wrote this without google or internet so dont"dude you implemented this library but terrible"
-
-also the code is totally unreadable i didnt care at all about that
-
----
-
-ok I wrote some more code in a exercise book at 1am then transcribed it, uhm it's cleaner but still not finding pi  
-
----
-
-ok i fixed it, `attempt_2.py` works  
-input an positive integer, if you don't then it defaults to 100  
-then it will print the collisions  
-
-if you enter a number larger than 100 then it will print the first 20 and the last 20 collisions only
-sample outputs found in outputs.txt
+if you don't have python available rn you can look at sample outputs found in `outputs.txt`
