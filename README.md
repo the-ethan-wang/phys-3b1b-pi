@@ -2,6 +2,12 @@
 
 i wrote this without google or internet at 1am across 2 nights.
 
+# sample outputs in `outputs.txt`
+# sample outputs in `outputs.txt`
+# sample outputs in `outputs.txt`
+# sample outputs in `outputs.txt`
+# sample outputs in `outputs.txt`
+
 ## inspiration
 
 Completely inspired by 3b1b's video on [why colliding blocks compute pi](https://www.youtube.com/watch?v=6dTyOl1fmDo). And physics textbook lol.
