@@ -64,7 +64,7 @@ move_boxbox handles movement from post boxwall collision to boxbox collision
 move_boxwall handles movement from post boxbox collision to boxwall collision
 
 if you want to know why it computes pi you should watch 3b1b video if you haven't already.  
-also for small n it's not right sometimes if you know please tell me owo  
+also for small n it's not right sometimes if you know please tell me why owo  
 
 ## contents
 
