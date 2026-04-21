@@ -7,11 +7,8 @@ except:
     m1 = 100
 
 sparse_printing=False
-extra_sparse_printing=False
-if m1>=1000:
+if m1>=100:
     sparse_printing=True
-if m1>=10000:
-    extra_sparse_printing=True
 
 m2 = 1
 t = 0.0
@@ -22,7 +19,7 @@ x2 = -1.0
 next_box = True
 c_count = 1
 
-predicted_c_count = math.pi * m1 // 1
+predicted_c_count = int(math.pi * m1)
 
 def boxbox(m1,m2,u1,u2):
     rel_v=u1-u2
@@ -54,24 +51,20 @@ def move_boxwall(t, v1, v2, x1, x2):
     x2+=delta_t*v2
     return(t,v1,v2,x1,x2)
 
-print("  t     v1    v2    x1    x2   coll   c")
+print("  t       v1      v2    x1    x2   coll   c")
 while not (v1<=v2<=0):
     if next_box:
         t,v1,v2,x1,x2=move_boxbox(t,v1,v2,x1,x2)
-        if not sparse_printing:
-            display(t,v1,v2,x1,x2,next_box,c_count)
         v1,v2=boxbox(m1,m2,v1,v2)
-        if not extra_sparse_printing:
+        if not sparse_printing:
             display(t,v1,v2,x1,x2,next_box,c_count)
         else:
             if abs(c_count-predicted_c_count) <= 20:
                 display(t,v1,v2,x1,x2,next_box,c_count)
     else:
         t,v1,v2,x1,x2=move_boxwall(t,v1,v2,x1,x2)
-        if not sparse_printing:
-            display(t,v1,v2,x1,x2,next_box,c_count)
         v2=boxwall(v2)
-        if not extra_sparse_printing:
+        if not sparse_printing:
             display(t,v1,v2,x1,x2,next_box,c_count)
         else:
             if (c_count-predicted_c_count)%predicted_c_count <= 20:
@@ -79,3 +72,8 @@ while not (v1<=v2<=0):
 
     next_box = not next_box
     c_count+=1
+
+c_count -= 1
+print("-" * (42+len(str(c_count))))
+print(f"Prediction: {predicted_c_count} | True: {c_count}")
+print(f"pi * {m1}: {(math.pi * m1):.7f}")

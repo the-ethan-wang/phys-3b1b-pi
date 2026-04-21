@@ -36,5 +36,6 @@ ok I wrote some more code in a exercise book at 1am then transcribed it, uhm it'
 ok i fixed it, `attempt_2.py` works  
 input an positive integer, if you don't then it defaults to 100  
 then it will print the collisions  
-if you enter a number larger than 1000 then it will print half the number of information but the information is redundant / simple to find out  
-if you enter a number larger than 10000 then it will print the first 20 and the last 20 collisions only
+
+if you enter a number larger than 100 then it will print the first 20 and the last 20 collisions only
+sample outputs found in outputs.txt
