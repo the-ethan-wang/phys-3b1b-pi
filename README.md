@@ -40,6 +40,7 @@ initial momentum = v1 * (m1 + m2) + m2 * relative velocity
 v1 = (initial momentum - m2 * relative velocity) / initial momentum  
 v2 = v1 + relative velocity  
 
+python code:
 ```py
 rel_v=u1-u2
 init_m=m1*u1+m2*u2
@@ -54,11 +55,16 @@ definitely how collisions work trust me :>
 move_boxbox handles movement from post boxwall collision to boxbox collision
 move_boxwall handles movement from post boxbox collision to boxwall collision
 
+if you want to know why it computes pi you should watch 3b1b video if you haven't already.  
+also for small n it's not right sometimes if you know please tell me owo  
+
 ## contents
 
-`old.py` contains really bad code where I tried to calculate the outcome of elastic collisions using a quadratic. (idk what i was doing lol)
+`old.py` contains really bad code where I tried to calculate the outcome of elastic collisions using a quadratic. Uses KE and doesn't work.
 
 `main.py` has "finished" code you run it and enter a positive integer and it will calculate pi*m1 through physics
+
+`outputs.txt` contains some sample outputs 
 
 ## usage
 
@@ -70,9 +76,10 @@ or
 ```bash
 python main.py
 ```
-then enter a positive integer for m2, if you don't enter an integer between 1 and 10^10 inclusive it will default to 100  
+then enter a positive integer for m2, if you don't enter an integer between 1 and 10^15 inclusive it will default to 100  
 if you dont want to choose just press enter and it'll default to 100  
 if you enter a number larger than 100 then it will print the first 20 and the last 20 collisions only  
 you should probably enter a number that is 100^n  
+it will takes a while for big numbers.
 
-if you don't have python available you can look at sample outputs found in `outputs.txt`
+# if you don't have python available you can look at sample outputs in `outputs.txt`

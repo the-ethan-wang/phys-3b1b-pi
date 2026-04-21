@@ -38,14 +38,13 @@ def move(t, v1, v2, x1, x2, next_box):
 
 def collide(next_box, m1, m2, v1, v2):
     if next_box:
-        assert (v1 and m1 and m2)
         return boxbox(m1, m2, v1, v2)
     else:
         return (v1, boxwall(v2))
 
 try:
     m1 = int(input())
-    assert 1<=m1<=10**10
+    assert 1<=m1<=10**15
 except:
     m1 = 100
 
