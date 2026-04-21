@@ -12,7 +12,9 @@ From [a text adaptation by Josh Pullen](https://www.3blue1brown.com/lessons/coll
 > 
 > If that first block has a mass which is some power of 100 times the mass of the second, for example 1,000,000 times as much, a ridiculously surprising fact pops out: The total number of collisions has the same starting digits as pi! In this example, that's 3,141 collisions.  
 
-[![video of blocks]()](https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2025/colliding-blocks-v2/frictionless-elastic-collisions.mp4)
+[![video of block collisions]()](https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2025/colliding-blocks-v2/frictionless-elastic-collisions.mp4)
+
+<video controls src="https://storage.googleapis.com/3blue1brown-website-bucket/lessons/2025/colliding-blocks-v2/frictionless-elastic-collisions.mp4" title="the video wont embed :("></video>
 
 I watched the video a long time ago and recently wanted to try and do it lol :>
 
