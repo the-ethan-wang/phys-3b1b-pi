@@ -22,29 +22,27 @@ I watched the video a long time ago and recently wanted to try and do it lol :>
 
 total momentum in the system technically isn't constant since we treat the wall as a unmovable object.  
 
-also for some reason the calculations work with m^2 and i don't want to think too hard right now so im just using m^2
-
 there are two types of collisions:
 - box and box
 - box and wall
 
 in box and box collisions, momentum is conserved.  
 relative velocity = u1 - u2  
-intial momentum = m1^2 * u1 + m2^2 * u2  
+intial momentum = m1 * u1 + m2 * u2  
 since the collision is elastic, v2 + u2 = v1 + u1  
 v2 = v1 + u1 - u2  
 v2 = v1 + relative velocity  
 
 initial momentum = final momentum    
-initial momentum = m1^2 * v1 + m2^2 * v2  
-initial momentum = m1^2 * v1 + m2^2 * (v1 + relative velocity)  
-initial momentum = v1 * (m1^2 + m2^2) + m2^2 * relative velocity  
-v1 = (initial momentum - m2^2 * relative velocity) / initial momentum  
+initial momentum = m1 * v1 + m2 * v2  
+initial momentum = m1 * v1 + m2 * (v1 + relative velocity)  
+initial momentum = v1 * (m1 + m2) + m2 * relative velocity  
+v1 = (initial momentum - m2 * relative velocity) / initial momentum  
 v2 = v1 + relative velocity  
 ```py
 rel_v=u1-u2
-init_m=m1**2*u1+m2**2*u2
-v1=(init_m-m2*rel_v)/(m1**2+m2**2)
+init_m=m1*u1+m2*u2
+v1=(init_m-m2*rel_v)/(m1+m2)
 v2=v1+rel_v
 return(v1, v2)
 ```
@@ -74,5 +72,6 @@ python main.py
 then enter a positive integer for m2, if you don't enter an integer between 1 and 10^10 inclusive it will default to 100  
 if you dont want to choose just press enter and it'll default to 100  
 if you enter a number larger than 100 then it will print the first 20 and the last 20 collisions only  
+you should probably enter a number that is 100^n  
 
-if you don't have python available rn you can look at sample outputs found in `outputs.txt`
+if you don't have python available you can look at sample outputs found in `outputs.txt`

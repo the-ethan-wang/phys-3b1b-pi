@@ -2,8 +2,8 @@ import math
 
 def boxbox(m1, m2, u1, u2):
     rel_v=u1-u2
-    init_m=m1**2*u1+m2**2*u2
-    v1=(init_m-m2*rel_v)/(m1**2+m2**2)
+    init_m=m1*u1+m2*u2
+    v1=(init_m-m2*rel_v)/(m1+m2)
     v2=v1+rel_v
     return(v1, v2)
 
@@ -59,7 +59,7 @@ next_box = True
 c_count = 0
 
 sparse_printing = m1>=100
-predicted_c_count = int(math.pi * m1)
+predicted_c_count = int(math.pi * math.sqrt(m1))
 
 print("-" * (42+len(str(c_count))))
 print("  t       v1      v2    x1    x2   coll   c")
@@ -78,4 +78,4 @@ while not (v1<=v2<=0):
     
 print("-" * (42+len(str(c_count))))
 print(f"Prediction: {predicted_c_count} | True: {c_count}")
-print(f"pi * {m1}: {(math.pi * m1):.7f}")
+print(f"pi * {m1}: {(math.pi * math.sqrt(m1)):.7f}")
