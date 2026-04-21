@@ -1,27 +1,6 @@
 import math
 
-try:
-    m1 = int(input())
-    assert 0<m1<10**20
-except:
-    m1 = 100
-
-sparse_printing=False
-if m1>=100:
-    sparse_printing=True
-
-m2 = 1
-t = 0.0
-v1 = 1.0
-v2 = 0.0
-x1 = -1.0
-x2 = -1.0
-next_box = True
-c_count = 1
-
-predicted_c_count = int(math.pi * m1)
-
-def boxbox(m1,m2,u1,u2):
+def boxbox(m1, m2, u1, u2):
     rel_v=u1-u2
     init_m=m1**2*u1+m2**2*u2
     v1=(init_m-m2*rel_v)/(m1**2+m2**2)
@@ -32,7 +11,7 @@ def boxwall(u2):
     v2=-u2
     return v2
 
-def display(t,v1,v2,x1,x2,next_box,c_count):
+def display(t, v1, v2, x1, x2, next_box, c_count):
     print(f"{t:>5.2f} {v1:>7.2f} {v2:>7.2f} {x1:>5.2f} {x2:>5.2f} {'boxbox ' if next_box else 'boxwall'} {c_count}")
 
 def move_boxbox(t, v1, v2, x1, x2):
@@ -51,29 +30,52 @@ def move_boxwall(t, v1, v2, x1, x2):
     x2+=delta_t*v2
     return(t,v1,v2,x1,x2)
 
-print("  t       v1      v2    x1    x2   coll   c")
-while not (v1<=v2<=0):
+def move(t, v1, v2, x1, x2, next_box):
     if next_box:
-        t,v1,v2,x1,x2=move_boxbox(t,v1,v2,x1,x2)
-        v1,v2=boxbox(m1,m2,v1,v2)
-        if not sparse_printing:
-            display(t,v1,v2,x1,x2,next_box,c_count)
-        else:
-            if abs(c_count-predicted_c_count) <= 20:
-                display(t,v1,v2,x1,x2,next_box,c_count)
+        return move_boxbox(t, v1, v2, x1, x2)
     else:
-        t,v1,v2,x1,x2=move_boxwall(t,v1,v2,x1,x2)
-        v2=boxwall(v2)
-        if not sparse_printing:
-            display(t,v1,v2,x1,x2,next_box,c_count)
-        else:
-            if (c_count-predicted_c_count)%predicted_c_count <= 20:
-                display(t,v1,v2,x1,x2,next_box,c_count)
+        return move_boxwall(t, v1, v2, x1, x2)
+
+def collide(next_box, m1, m2, v1, v2):
+    if next_box:
+        assert (v1 and m1 and m2)
+        return boxbox(m1, m2, v1, v2)
+    else:
+        return (v1, boxwall(v2))
+
+try:
+    m1 = int(input())
+    assert 1<=m1<=10**10
+except:
+    m1 = 100
+
+m2 = 1
+t = 0.0
+v1 = 1.0
+v2 = 0.0
+x1 = -1.0
+x2 = -1.0
+next_box = True
+c_count = 0
+
+sparse_printing = m1>=100
+predicted_c_count = int(math.pi * m1)
+
+print("-" * (42+len(str(c_count))))
+print("  t       v1      v2    x1    x2   coll   c")
+
+while not (v1<=v2<=0):
+    c_count+=1
+    t,v1,v2,x1,x2=move(t,v1,v2,x1,x2,next_box)
+    v1,v2=collide(next_box,m1,m2,v1,v2)
+
+    if not sparse_printing:
+        display(t,v1,v2,x1,x2,next_box,c_count)
+    elif predicted_c_count-c_count <= 20 or c_count <= 20:
+        display(t,v1,v2,x1,x2,next_box,c_count)
 
     next_box = not next_box
-    c_count+=1
-
-c_count -= 1
+    
 print("-" * (42+len(str(c_count))))
 print(f"Prediction: {predicted_c_count} | True: {c_count}")
 print(f"pi * {m1}: {(math.pi * m1):.7f}")
